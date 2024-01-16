@@ -16,8 +16,6 @@ networks.  The model defined in this document specifies a flexi-grid
 traffic engineering database that is used to describe the topology of
 a flexi-grid network.  It is based on and augments existing YANG
 models that describe network and traffic engineering topologies. 
-       The YANG data model defined in this document conforms to the Network
-Management Datastore Architecture (NMDA). 
     " name="description">
 <meta content="xml2rfc 3.19.0" name="generator">
 <meta content="next generation" name="keyword">
@@ -1093,8 +1091,6 @@ networks.  The model defined in this document specifies a flexi-grid
 traffic engineering database that is used to describe the topology of
 a flexi-grid network.  It is based on and augments existing YANG
 models that describe network and traffic engineering topologies.<a href="#section-abstract-1" class="pilcrow">¶</a></p>
-<p id="section-abstract-2">The YANG data model defined in this document conforms to the Network
-Management Datastore Architecture (NMDA).<a href="#section-abstract-2" class="pilcrow">¶</a></p>
 </section>
 <section class="note rfcEditorRemove" id="section-note.1">
       <h2 id="name-about-this-document">
@@ -1257,7 +1253,7 @@ is independent of control plane protocols.<a href="#section-1-4" class="pilcrow"
 their values.  It characterizes the features and the performances of
 the flexi-grid elements.  For this, it augments <span>[<a href="#RFC8795" class="cite xref">RFC8795</a>]</span>, and
 imports the generic Layer 0 types and use of "media-channel" defined
-in <span>[<a href="#RFC9093" class="cite xref">RFC9093</a>]</span>.<a href="#section-1-5" class="pilcrow">¶</a></p>
+in <span>[<a href="#I-D.ietf-ccamp-rfc9093-bis" class="cite xref">I-D.ietf-ccamp-rfc9093-bis</a>]</span>.<a href="#section-1-5" class="pilcrow">¶</a></p>
 <p id="section-1-6">An application example in <a href="#example" class="auto internal xref">Section 4</a> is also provided to better
 understand the utility of this YANG model.<a href="#section-1-6" class="pilcrow">¶</a></p>
 <p id="section-1-7">A partner document defines a second YANG module that described flexi-
@@ -1325,7 +1321,7 @@ defined in <span>[<a href="#RFC8340" class="cite xref">RFC8340</a>]</span>.<a hr
 <p id="section-3.1-1">In this document, names of data nodes and other data model objects
 are prefixed using the standard prefix associated with the
 corresponding YANG imported modules, as shown in <a href="#tab-prefixes" class="auto internal xref">Table 1</a>.  It uses
-prefixes from <span>[<a href="#RFC9093" class="cite xref">RFC9093</a>]</span>, <span>[<a href="#RFC8345" class="cite xref">RFC8345</a>]</span>, and <span>[<a href="#RFC8795" class="cite xref">RFC8795</a>]</span>.<a href="#section-3.1-1" class="pilcrow">¶</a></p>
+prefixes from <span>[<a href="#I-D.ietf-ccamp-rfc9093-bis" class="cite xref">I-D.ietf-ccamp-rfc9093-bis</a>]</span>, <span>[<a href="#RFC8345" class="cite xref">RFC8345</a>]</span>, and <span>[<a href="#RFC8795" class="cite xref">RFC8795</a>]</span>.<a href="#section-3.1-1" class="pilcrow">¶</a></p>
 <span id="name-prefixes-and-corresponding-"></span><div id="tab-prefixes">
 <table class="center" id="table-1">
           <caption>
@@ -1343,14 +1339,12 @@ prefixes from <span>[<a href="#RFC9093" class="cite xref">RFC9093</a>]</span>, <
             <tr>
               <td class="text-left" rowspan="1" colspan="1">l0-types</td>
               <td class="text-left" rowspan="1" colspan="1">ietf-layer0-types</td>
-              <td class="text-left" rowspan="1" colspan="1">
-                <span>[<a href="#RFC9093" class="cite xref">RFC9093</a>]</span>
-</td>
+              <td class="text-left" rowspan="1" colspan="1">[RFCYYYY]</td>
             </tr>
             <tr>
               <td class="text-left" rowspan="1" colspan="1">flexgt</td>
               <td class="text-left" rowspan="1" colspan="1">ietf-flexi-grid-topology</td>
-              <td class="text-left" rowspan="1" colspan="1">RFC XXXX</td>
+              <td class="text-left" rowspan="1" colspan="1">RFCXXXX</td>
             </tr>
             <tr>
               <td class="text-left" rowspan="1" colspan="1">nw</td>
@@ -1378,6 +1372,7 @@ prefixes from <span>[<a href="#RFC9093" class="cite xref">RFC9093</a>]</span>, <
 </div>
 <p id="section-3.1-3">RFC Editor Note:
 Please replace XXXX with the RFC number assigned to this document.
+Please replace YYYY with the RFC numbers assigned to <span>[<a href="#I-D.ietf-ccamp-rfc9093-bis" class="cite xref">I-D.ietf-ccamp-rfc9093-bis</a>]</span>.
 Please remove this note.<a href="#section-3.1-3" class="pilcrow">¶</a></p>
 </section>
 </div>
@@ -1417,9 +1412,7 @@ switches (nodes) and links.  <a href="#fig-topo" class="auto internal xref">Figu
 <a href="#name-topology-example" class="selfRef">Topology Example</a>
         </figcaption></figure>
 </div>
-<p id="section-4-3">In order to configure a network media channel to interconnect
-transponders A and E, first of all we have to populate the flexi-grid
-topology YANG model with all elements in the network:<a href="#section-4-3" class="pilcrow">¶</a></p>
+<p id="section-4-3">In order to configure a flexi-grid network to interconnect transponders A and E, first of all we have to populate the flexi-grid topology YANG model with all elements in the network:<a href="#section-4-3" class="pilcrow">¶</a></p>
 <ul class="normal">
 <li class="normal" id="section-4-4.1">
           <p id="section-4-4.1.1">We define the transponders within nodes A and E as tunnel
@@ -1459,7 +1452,7 @@ switching in transport network.  Therefore the YANG module presented
 in this document augments from a more generic TE network topology
 data model, i.e., the ietf-te-topology, as specified in <span>[<a href="#RFC8795" class="cite xref">RFC8795</a>]</span>,
 following the guidelines provided in section 6 of <span>[<a href="#RFC8795" class="cite xref">RFC8795</a>]</span>.<a href="#section-5.1-1" class="pilcrow">¶</a></p>
-<p id="section-5.1-2">Common types, identities, and groupings defined in <span>[<a href="#RFC9093" class="cite xref">RFC9093</a>]</span> are
+<p id="section-5.1-2">Common types, identities, and groupings defined in <span>[<a href="#I-D.ietf-ccamp-rfc9093-bis" class="cite xref">I-D.ietf-ccamp-rfc9093-bis</a>]</span> are
 reused in this document.<a href="#section-5.1-2" class="pilcrow">¶</a></p>
 <p id="section-5.1-3">The figure below shows the augmentation relationship between YANG
 models.<a href="#section-5.1-3" class="pilcrow">¶</a></p>
@@ -1488,9 +1481,9 @@ links, are still applicable for describing a flexi-grid topology and
 the model presented in this document only specifies the technology-
 specific attributes/information.<a href="#section-5.1-5" class="pilcrow">¶</a></p>
 <p id="section-5.1-6">The flexi-grid specific attributes and label format is defined in
-<span>[<a href="#RFC7699" class="cite xref">RFC7699</a>]</span>, including the grid type, channel spacing, slot width
+<span>[<a href="#RFC7699" class="cite xref">RFC7699</a>]</span>, including the grid type, nominal central frequency granularity, slot width
 granularity, n and m parameters.  A collection of common data types
-have also been specified in <span>[<a href="#RFC9093" class="cite xref">RFC9093</a>]</span>, and used in this document for
+have also been specified in <span>[<a href="#I-D.ietf-ccamp-rfc9093-bis" class="cite xref">I-D.ietf-ccamp-rfc9093-bis</a>]</span>, and used in this document for
 augmentation of the generic TE topology model.<a href="#section-5.1-6" class="pilcrow">¶</a></p>
 <p id="section-5.1-7">The YANG module ietf-flexi-grid-topology defined in this document
 conforms to the Network Management Datastore Architecture (NMDA)
@@ -1559,12 +1552,12 @@ for the te-bandwidth containers defined in <span>[<a href="#RFC8795" class="cite
         </h3>
 <p id="section-5.4-1">The model augments all the occurrences of the label-restriction list
 in <span>[<a href="#RFC8795" class="cite xref">RFC8795</a>]</span> with flexi-grid technology specific attributes using the
-flexi-grid-label-range-info grouping defined in <span>[<a href="#RFC9093" class="cite xref">RFC9093</a>]</span>.<a href="#section-5.4-1" class="pilcrow">¶</a></p>
+flexi-grid-label-range-info grouping defined in <span>[<a href="#I-D.ietf-ccamp-rfc9093-bis" class="cite xref">I-D.ietf-ccamp-rfc9093-bis</a>]</span>.<a href="#section-5.4-1" class="pilcrow">¶</a></p>
 <p id="section-5.4-2">Moreover, following the guidelines in <span>[<a href="#RFC8795" class="cite xref">RFC8795</a>]</span>, the model augments
 all the occurrences of the te-label container with the flexi-grid
 technology specific attributes using the flexi-grid-label-start-end,
 flexi-grid-label-hop and flexi-grid-label-step groupings defined in
-<span>[<a href="#RFC9093" class="cite xref">RFC9093</a>]</span>.<a href="#section-5.4-2" class="pilcrow">¶</a></p>
+<span>[<a href="#I-D.ietf-ccamp-rfc9093-bis" class="cite xref">I-D.ietf-ccamp-rfc9093-bis</a>]</span>.<a href="#section-5.4-2" class="pilcrow">¶</a></p>
 </section>
 </div>
 </section>
@@ -4372,6 +4365,10 @@ Module Names" registry <span>[<a href="#RFC6020" class="cite xref">RFC6020</a>]<
 <a href="#section-10.1" class="section-number selfRef">10.1. </a><a href="#name-normative-references" class="section-name selfRef">Normative References</a>
         </h3>
 <dl class="references">
+<dt id="I-D.ietf-ccamp-rfc9093-bis">[I-D.ietf-ccamp-rfc9093-bis]</dt>
+        <dd>
+<span class="refAuthor">Belotti, S.</span>, <span class="refAuthor">Busi, I.</span>, <span class="refAuthor">Beller, D.</span>, <span class="refAuthor">Zheng, H.</span>, <span class="refAuthor">Le Rouzic, E.</span>, <span class="refAuthor">Guo, A.</span>, and <span class="refAuthor">D. King</span>, <span class="refTitle">"A YANG Data Model for Layer 0 Types"</span>, <span class="refContent">Work in Progress</span>, <span class="seriesInfo">Internet-Draft, draft-ietf-ccamp-rfc9093-bis-07</span>, <time datetime="2023-10-23" class="refDate">23 October 2023</time>, <span>&lt;<a href="https://datatracker.ietf.org/doc/html/draft-ietf-ccamp-rfc9093-bis-07">https://datatracker.ietf.org/doc/html/draft-ietf-ccamp-rfc9093-bis-07</a>&gt;</span>. </dd>
+<dd class="break"></dd>
 <dt id="ITU-T_G.694.1">[ITU-T_G.694.1]</dt>
         <dd>
 <span class="refAuthor">ITU-T Recommendation G.694.1</span>, <span class="refTitle">"Spectral grids for WDM applications: DWDM frequency grid"</span>, <span class="seriesInfo">ITU-T G.694.1 </span>, <time datetime="2020-10" class="refDate">October 2020</time>. </dd>
@@ -4429,12 +4426,8 @@ Module Names" registry <span>[<a href="#RFC6020" class="cite xref">RFC6020</a>]<
 <span class="refAuthor">Rescorla, E.</span>, <span class="refTitle">"The Transport Layer Security (TLS) Protocol Version 1.3"</span>, <span class="seriesInfo">RFC 8446</span>, <span class="seriesInfo">DOI 10.17487/RFC8446</span>, <time datetime="2018-08" class="refDate">August 2018</time>, <span>&lt;<a href="https://www.rfc-editor.org/rfc/rfc8446">https://www.rfc-editor.org/rfc/rfc8446</a>&gt;</span>. </dd>
 <dd class="break"></dd>
 <dt id="RFC8795">[RFC8795]</dt>
-        <dd>
-<span class="refAuthor">Liu, X.</span>, <span class="refAuthor">Bryskin, I.</span>, <span class="refAuthor">Beeram, V.</span>, <span class="refAuthor">Saad, T.</span>, <span class="refAuthor">Shah, H.</span>, and <span class="refAuthor">O. Gonzalez de Dios</span>, <span class="refTitle">"YANG Data Model for Traffic Engineering (TE) Topologies"</span>, <span class="seriesInfo">RFC 8795</span>, <span class="seriesInfo">DOI 10.17487/RFC8795</span>, <time datetime="2020-08" class="refDate">August 2020</time>, <span>&lt;<a href="https://www.rfc-editor.org/rfc/rfc8795">https://www.rfc-editor.org/rfc/rfc8795</a>&gt;</span>. </dd>
-<dd class="break"></dd>
-<dt id="RFC9093">[RFC9093]</dt>
       <dd>
-<span class="refAuthor">Zheng, H.</span>, <span class="refAuthor">Lee, Y.</span>, <span class="refAuthor">Guo, A.</span>, <span class="refAuthor">Lopez, V.</span>, and <span class="refAuthor">D. King</span>, <span class="refTitle">"A YANG Data Model for Layer 0 Types"</span>, <span class="seriesInfo">RFC 9093</span>, <span class="seriesInfo">DOI 10.17487/RFC9093</span>, <time datetime="2021-08" class="refDate">August 2021</time>, <span>&lt;<a href="https://www.rfc-editor.org/rfc/rfc9093">https://www.rfc-editor.org/rfc/rfc9093</a>&gt;</span>. </dd>
+<span class="refAuthor">Liu, X.</span>, <span class="refAuthor">Bryskin, I.</span>, <span class="refAuthor">Beeram, V.</span>, <span class="refAuthor">Saad, T.</span>, <span class="refAuthor">Shah, H.</span>, and <span class="refAuthor">O. Gonzalez de Dios</span>, <span class="refTitle">"YANG Data Model for Traffic Engineering (TE) Topologies"</span>, <span class="seriesInfo">RFC 8795</span>, <span class="seriesInfo">DOI 10.17487/RFC8795</span>, <time datetime="2020-08" class="refDate">August 2020</time>, <span>&lt;<a href="https://www.rfc-editor.org/rfc/rfc8795">https://www.rfc-editor.org/rfc/rfc8795</a>&gt;</span>. </dd>
 <dd class="break"></dd>
 </dl>
 </section>
